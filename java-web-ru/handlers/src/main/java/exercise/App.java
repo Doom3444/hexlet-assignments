@@ -11,9 +11,9 @@ public final class App {
             config.bundledPlugins.enableDevLogging();
         });
         var phones = Data.getPhones();
-        app.get("/phones", ctx -> ctx.jsonStream(phones));
+        app.get("/phones", ctx -> ctx.json(phones));
         var domains = Data.getDomains();
-        app.get("/domains", ctx -> ctx.jsonStream(domains));
+        app.get("/domains", ctx -> ctx.json(domains));
         app.start(7070);
         return app;
         // END
